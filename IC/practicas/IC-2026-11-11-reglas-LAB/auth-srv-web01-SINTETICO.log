@@ -1,0 +1,7 @@
+Nov  9 07:30:12 srv-web01 sshd[2201]: Accepted publickey for tecnico from 10.20.0.5 port 50112 ssh2: ED25519 SHA256:Q2xhc2VEZUVqZW1wbG9JQ0NoZXN0ZTIwMjY
+Nov  9 09:08:01 srv-web01 sshd[3310]: Invalid user admin from 203.0.113.77 port 40122
+Nov  9 09:08:03 srv-web01 sshd[3310]: Failed password for invalid user admin from 203.0.113.77 port 40122 ssh2
+Nov  9 09:08:11 srv-web01 sshd[3312]: Failed password for invalid user admin from 203.0.113.77 port 40126 ssh2
+Nov  9 09:08:19 srv-web01 sshd[3315]: Failed password for root from 203.0.113.77 port 40130 ssh2
+Nov  9 09:09:30 srv-web01 sshd[3318]: Connection closed by authenticating user root 203.0.113.77 port 40134 [preauth]
+Nov  9 11:45:02 srv-web01 sshd[4120]: Accepted publickey for tecnico from 10.20.0.5 port 50388 ssh2: ED25519 SHA256:Q2xhc2VEZUVqZW1wbG9JQ0NoZXN0ZTIwMjY

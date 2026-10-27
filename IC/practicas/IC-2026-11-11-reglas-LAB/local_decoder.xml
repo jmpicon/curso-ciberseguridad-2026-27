@@ -1,0 +1,18 @@
+<!--
+  Decodificador del portal de nóminas (aplicación ficticia).
+  Formato de las líneas:
+    portal-nominas[PID]: ACCION user=USUARIO src=IP
+    portal-nominas[PID]: export user=USUARIO src=IP registros=N
+-->
+
+<decoder name="portal-nominas">
+  <program_name>^portal-nominas$</program_name>
+</decoder>
+
+<decoder name="portal-nominas-campos">
+  <parent>portal-nominas</parent>
+  <regex>^(\w+) user=(\S+) src=(\S+)</regex>
+  <order>accion, dstuser, srcip</order>
+</decoder>
+
+<!-- Apartado 6.3: añade aquí el decodificador hermano que saca el campo registros. -->

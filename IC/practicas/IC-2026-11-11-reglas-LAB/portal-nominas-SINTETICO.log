@@ -1,0 +1,25 @@
+Nov  9 07:52:10 srv-web01 portal-nominas[1187]: login_ok user=director src=198.51.100.23
+Nov  9 07:53:02 srv-web01 portal-nominas[1187]: export user=director src=198.51.100.23 registros=3
+Nov  9 08:01:44 srv-web01 portal-nominas[1187]: login_ok user=lucia src=10.20.0.31
+Nov  9 08:03:15 srv-web01 portal-nominas[1187]: login_fail user=marcos src=10.20.0.44
+Nov  9 08:03:41 srv-web01 portal-nominas[1187]: login_ok user=marcos src=10.20.0.44
+Nov  9 08:10:05 srv-web01 portal-nominas[1187]: export user=lucia src=10.20.0.31 registros=12
+Nov  9 08:32:50 srv-web01 portal-nominas[1187]: login_ok user=rrhh src=10.20.0.12
+Nov  9 08:40:12 srv-web01 portal-nominas[1187]: export user=rrhh src=10.20.0.12 registros=156
+Nov  9 09:05:31 srv-web01 portal-nominas[1187]: login_fail user=marcos src=10.20.0.44
+Nov  9 09:05:52 srv-web01 portal-nominas[1187]: login_fail user=marcos src=10.20.0.44
+Nov  9 09:06:20 srv-web01 portal-nominas[1187]: login_ok user=marcos src=10.20.0.44
+Nov  9 09:12:02 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:12:09 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:12:15 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:12:22 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:12:28 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:12:35 srv-web01 portal-nominas[1187]: login_fail user=admin src=203.0.113.77
+Nov  9 09:13:40 srv-web01 portal-nominas[1187]: login_fail user=administrador src=203.0.113.77
+Nov  9 09:13:47 srv-web01 portal-nominas[1187]: login_fail user=administrador src=203.0.113.77
+Nov  9 09:14:55 srv-web01 portal-nominas[1187]: login_fail user=lucia src=203.0.113.77
+Nov  9 09:15:20 srv-web01 portal-nominas[1187]: login_fail user=lucia src=203.0.113.77
+Nov  9 09:16:05 srv-web01 portal-nominas[1187]: login_ok user=lucia src=203.0.113.77
+Nov  9 09:17:12 srv-web01 portal-nominas[1187]: export user=lucia src=203.0.113.77 registros=4812
+Nov  9 09:21:30 srv-web01 portal-nominas[1187]: login_ok user=lucia src=10.20.0.31
+Nov  9 10:02:18 srv-web01 portal-nominas[1187]: export user=lucia src=10.20.0.31 registros=9

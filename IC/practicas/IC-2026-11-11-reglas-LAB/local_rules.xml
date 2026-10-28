@@ -1,0 +1,23 @@
+<!--
+  Reglas propias del portal de nóminas.
+  Los identificadores de 100000 a 120000 están reservados para reglas de usuario.
+-->
+<group name="local,portal_nominas,">
+
+  <rule id="100100" level="0">
+    <decoded_as>portal-nominas</decoded_as>
+    <description>Portal de nóminas: evento.</description>
+  </rule>
+
+  <rule id="100101" level="5">
+    <if_sid>100100</if_sid>
+    <field name="accion">^login_fail$</field>
+    <description>Portal de nóminas: acceso fallido de $(dstuser) desde $(srcip).</description>
+    <group>authentication_failed,</group>
+  </rule>
+
+  <!-- Apartado 7: reglas 100102 y 100103. -->
+
+  <!-- Apartado 8: reglas de correlación 100110, 100111 y 100112. -->
+
+</group>

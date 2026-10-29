@@ -26,7 +26,19 @@ contra la red del centro ni contra Internet**. Solo la VLAN aislada.
 |---|---|---|
 | **Objetivos vulnerables** (PPS/HE) | `objetivos/docker-compose.yml` (aquí) | `docker compose up -d` |
 | **Caja de herramientas del atacante** | VM Kali o contenedor `attacker` | ver `attacker-toolbox.md` |
+| **Objetivo VM completa** (HE) | Metasploitable en VirtualBox | ver `objetivos/metasploitable.md` |
 | **SOC / plataforma defensiva** (IC) | `~/xest-lab/2026-2027/SOC/plataforma/` | `docker compose up -d` |
+
+## Laboratorio de VMs (Kali + Metasploitable)
+
+Cuando el objetivo es una máquina completa (no un contenedor), el lab se gestiona
+con [`labnet-up.sh`](labnet-up.sh): cablea las VMs a la red aislada `labnet`,
+garantiza que no tocan la red del centro (rechaza el modo *bridged*) y permite
+levantar, restaurar y parar el escenario con un comando. Incluye `wan-on`/`wan-off`
+para dar Internet controlado solo al descargar herramientas.
+
+- Guía de uso completa: [LABORATORIO-VM.md](LABORATORIO-VM.md).
+- Objetivo Metasploitable (qué es, descarga directa y uso): [objetivos/metasploitable.md](objetivos/metasploitable.md).
 
 ## Preparación del profesor — checklist de arranque (una vez)
 

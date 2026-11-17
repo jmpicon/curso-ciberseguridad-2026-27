@@ -1,8 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:BuildBackend"
+
 [project]
-name = "reservas"
+name = "reservas-aula"
 version = "0.1.0"
+description = "Gestión de reservas del aula de informática"
 requires-python = ">=3.10"
 
-[tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["tests"]
+# En el apartado 9 de la práctica añadirás aquí la configuración de Bandit:
+#
+# [tool.bandit]
+# exclude_dirs = [".venv", "tests"]

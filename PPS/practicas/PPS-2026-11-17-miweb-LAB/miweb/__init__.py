@@ -25,6 +25,11 @@ def crear_app(**ajustes) -> Flask:
         ADMIN_CLAVE=config.ADMIN_CLAVE,
     )
     app.config.update(ajustes)
+    # TODO 4 — Lanza RuntimeError si falta SECRET_KEY o ADMIN_CLAVE.
+    #           La app no debe arrancar sin secretos. Ejemplo:
+    #           for obligatoria in ("SECRET_KEY", "ADMIN_CLAVE"):
+    #               if not app.config.get(obligatoria):
+    #                   raise RuntimeError(f"Falta la variable MIWEB_{obligatoria}")
 
     # nginx está delante y nos pasa la IP real del cliente en X-Forwarded-For.
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
@@ -98,6 +103,8 @@ def _rutas(app: Flask) -> None:
                 flash("Ese usuario no existe.")
                 return render_template("login.html"), 401
             if not check_password_hash(fila["hash"], clave):
+                # TODO 5 — Este detalle guarda la contraseña en el log de seguridad.
+                #           Cámbialo a: detalle="contraseña incorrecta"
                 registro.evento("login_fallido", 401, usuario=nombre,
                                 detalle=f"contraseña incorrecta: {clave}")
                 flash("Contraseña incorrecta.")

@@ -1,24 +1,24 @@
 """Configuración de la aplicación.
 
-Así es como la dejó el compañero que empezó el proyecto. Funciona, pero
-mezcla configuración y secretos dentro del código. En la práctica del 17/11
-lo arreglas.
+⚠️ PRÁCTICA PPS-11: Hay secretos escritos directamente en este fichero.
+Tu tarea es moverlos a variables de entorno y hacer que la app no arranque
+si faltan. Busca los TODO para saber qué cambiar.
 """
+import os
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 
-# Clave con la que Flask firma la cookie de sesión.
+# TODO 1 — Lee SECRET_KEY de la variable de entorno MIWEB_SECRET_KEY.
+#           Pista: os.environ.get("MIWEB_SECRET_KEY")
 SECRET_KEY = "reservas-2026-cambiar"
 
-# Contraseña del usuario administrador que se crea al iniciar la base de datos.
+# TODO 2 — Lee ADMIN_CLAVE de la variable de entorno MIWEB_ADMIN_CLAVE.
 ADMIN_CLAVE = "Admin2026!"
 
-# Modo depuración: muestra los errores con todo detalle en el navegador.
+# TODO 3 — DEBUG debe estar apagado por defecto. Solo "1" lo enciende.
+#           Pista: os.environ.get("MIWEB_DEBUG", "0") == "1"
 DEBUG = True
 
-# Fichero de la base de datos SQLite.
-BD = RAIZ / "datos" / "miweb.db"
-
-# Registro de seguridad: una línea JSON por evento.
-REGISTRO_SEGURIDAD = RAIZ / "registros" / "seguridad.log"
+BD = Path(os.environ.get("MIWEB_BD", RAIZ / "datos" / "miweb.db"))
+REGISTRO_SEGURIDAD = Path(os.environ.get("MIWEB_REGISTRO", RAIZ / "registros" / "seguridad.log"))

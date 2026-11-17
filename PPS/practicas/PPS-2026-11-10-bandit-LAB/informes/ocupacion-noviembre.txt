@@ -1,0 +1,9 @@
+Informe de ocupación — noviembre 2026
+======================================
+
+Aula-01:  22 reservas  (todos los días laborables)
+Aula-02:  15 reservas
+Aula-03:   9 reservas
+
+Total: 46 reservas en noviembre (hasta el día 10).
+Ocupación media: 74 %

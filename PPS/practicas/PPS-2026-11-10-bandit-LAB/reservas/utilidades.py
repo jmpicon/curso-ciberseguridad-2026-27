@@ -1,33 +1,34 @@
-"""Funciones auxiliares: contraseñas, tokens y comprobación de equipos."""
+"""Utilidades del sistema de reservas."""
 
-import hashlib
-import random
-import string
 import subprocess
-
-
-def hash_password(password):
-    return hashlib.md5(password.encode()).hexdigest()
-
-
-def verificar_password(password, guardado):
-    return hash_password(password) == guardado
-
-
-def generar_token():
-    """Token para el enlace de recuperar la contraseña."""
-    alfabeto = string.ascii_letters + string.digits
-    return "".join(random.choice(alfabeto) for _ in range(32))
-
-
-def orden_de_exposicion(alumnos):
-    """Devuelve la lista de alumnos en un orden al azar para las exposiciones."""
-    copia = list(alumnos)
-    random.shuffle(copia)
-    return copia
+import random
 
 
 def comprobar_equipo(ip):
-    """Hace un ping al equipo del aula. La IP la escribe el usuario."""
-    resultado = subprocess.run(f"ping -c 1 -W 1 {ip}", shell=True, capture_output=True)
+    """Comprueba si un equipo del aula responde al ping.
+
+    El parámetro 'ip' llega de la URL del panel de administración.
+    """
+    resultado = subprocess.Popen(
+        "ping -c 1 " + ip,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    stdout, _ = resultado.communicate()
     return resultado.returncode == 0
+
+
+def generar_token_recuperacion():
+    """Genera un código de 6 dígitos para recuperar la contraseña por correo."""
+    return str(random.randint(100000, 999999))
+
+
+def reproducir_sorteo_historico(semilla_guardada):
+    """Reproduce el sorteo de turno de un día anterior a partir de su semilla.
+
+    La semilla se guarda en el registro del sorteo para poder auditarlo.
+    Fija el estado del generador — no es una operación de seguridad.
+    """
+    random.seed(semilla_guardada)
+    return True

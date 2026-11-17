@@ -1,11 +1,15 @@
-"""Descarga de los informes de ocupación de las aulas."""
+"""Lectura de informes de ocupación."""
 
-from pathlib import Path
+import os
 
-from reservas.config import CARPETA_INFORMES
+DIRECTORIO_INFORMES = os.path.join(os.path.dirname(__file__), "..", "informes")
 
 
-def leer_informe(nombre, carpeta=CARPETA_INFORMES):
-    """Devuelve el texto del informe. El nombre llega en la URL: /informes?nombre=..."""
-    ruta = Path(carpeta) / nombre
-    return ruta.read_text(encoding="utf-8")
+def leer_informe(nombre):
+    """Lee un informe de ocupación del aula.
+
+    El parámetro 'nombre' llega de la URL: /informes?archivo=ocupacion-octubre.txt
+    """
+    ruta = os.path.join(DIRECTORIO_INFORMES, nombre)
+    with open(ruta, "r", encoding="utf-8") as f:
+        return f.read()

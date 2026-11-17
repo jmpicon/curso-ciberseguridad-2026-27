@@ -1,2 +1,9 @@
-Ocupación del aula 2.04 en octubre de 2026 (datos inventados)
-Lunes 82 % · Martes 91 % · Miércoles 77 % · Jueves 88 % · Viernes 64 %
+Informe de ocupación — octubre 2026
+====================================
+
+Aula-01:  18 reservas  (lunes a viernes, 09:00–11:00)
+Aula-02:  12 reservas  (martes y jueves, 15:00–17:00)
+Aula-03:   7 reservas  (viernes tarde)
+
+Total: 37 reservas en octubre.
+Ocupación media: 61 %
